@@ -97,6 +97,7 @@
             this.Zatwierdz.TabIndex = 3;
             this.Zatwierdz.Text = "Zatwierdź";
             this.Zatwierdz.UseVisualStyleBackColor = true;
+            this.Zatwierdz.Click += new System.EventHandler(this.Zatwierdz_Click);
             // 
             // label1
             // 
