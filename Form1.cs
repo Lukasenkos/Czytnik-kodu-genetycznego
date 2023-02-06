@@ -25,7 +25,10 @@ namespace Czytnik_kodu_genetycznego
 
         private void clear_Click(object sender, EventArgs e)
         {
-
+            KodgenetycznyInput.Clear();
         }
     }
+
+
+
 }
