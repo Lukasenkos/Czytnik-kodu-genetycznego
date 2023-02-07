@@ -5,4 +5,4 @@
 3. LUBIE PLACKI
 4. 
 5. 
-6. 
+6. Optymalizacja w przyszłości ???
