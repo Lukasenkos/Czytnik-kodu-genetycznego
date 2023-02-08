@@ -26,153 +26,120 @@ namespace Czytnik_kodu_genetycznego
         String[] Tyr = { "UAC", "UAU" };
         String[] Phe = { "UUC", "UUU" };
         String[] KodonStop = { "UGA", "UAG", "UAA" };
+        String[] Kodony = {
+            "GGG", "GGA", "GGC", "GGU",
+            "GAG", "GAA",
+            "GAC", "GAU",
+            "GCG", "GCA", "GCC", "GCU",
+            "GUG", "GUA", "GUC", "GUU",
+            "AGG", "AGA", "CGG", "CGA", "CGC", "CGU",
+            "AGC", "AGU", "UCU", "UCC", "UCA", "UCG",
+            "AAG", "AAA",
+            "AAC", "AAU",
+            "ACG", "ACA", "ACC", "ACU",
+            "AUG",
+            "AUA", "AUC", "AUU" ,
+            "CAG", "CAA",
+            "CAC", "CAU",
+            "CCG", "CCA", "CCC", "CCU",
+            "CUG", "CUA", "CUC", "CUU", "UUG", "UUA",
+            "UGG",
+            "UGC", "UGU",
+            "UAC", "UAU",
+            "UUC", "UUU",
+            "UGA", "UAG", "UAA"
+        };
 
         public Form1()
         {
             InitializeComponent();
         }
-        char[] rnaSequence = "AUGUUUCCCUGA".ToCharArray();
+
+
+
 
         bool SprawdzaniePoprawnosci(char[] rnaSequence)
         {
-            for (int i = 0; i < rnaSequence.Length; i++)
+            if (checkBox1.Checked != true)
             {
-                if (rnaSequence[i] != 'A' || rnaSequence[i] != 'U' || rnaSequence[i] != 'G' || rnaSequence[i] != 'C' || rnaSequence.Length > 2)
+                Console.WriteLine("JEST TO DNA");
+                for (int i = 0; i < rnaSequence.Length; i++)
                 {
-                    Console.WriteLine("JEST OK");
-                    return true;
+                    if (rnaSequence[i] == 'A' || rnaSequence[i] == 'G' || rnaSequence[i] == 'C' || rnaSequence[i] == 'T' && rnaSequence.Length > 2)
+                    {
+                        Console.WriteLine("JEST OK: " + i + " " + rnaSequence[i]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wykryto nie poprawny GEN: " + i + " " + rnaSequence[i]);
+                        return false;
+                    }
                 }
-                else
+                Console.WriteLine("Kod DNA jest poprawny");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("JEST TO RNA");
+                for (int i = 0; i < rnaSequence.Length; i++)
                 {
-                    return false;
+                    if (rnaSequence[i] == 'A' || rnaSequence[i] == 'G' || rnaSequence[i] == 'C' || rnaSequence[i] == 'U' && rnaSequence.Length > 2)
+                    {
+                        Console.WriteLine("JEST OK: " + i + " " + rnaSequence[i]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wykryto nie poprawny GEN: " + i + " " + rnaSequence[i]);
+                        return false;
+                    }
+                }
+                Console.WriteLine("Kod RNA jest poprawny");
+                return true;
+            }
+        }
+
+        void RozpoznawaczBialek(string KodGenetyczny)
+        {
+            
+            for (int i = 0; i < KodGenetyczny.Length; i++)
+            {
+                if (KodGenetyczny[i] == 'T')
+                {
+                    //KodGenetyczny[i] = 'U';
+                }
+
+                for (int j = 0; j < Kodony[j].Length; j++)
+                {
+                    //if (KodGenetyczny[i] == Kodony[j])
+                    //{
+
+                    //}
                 }
             }
-            return true;
         }
 
 
         void Sprawdzanie()
         {
-            for (int i = 0; i < rnaSequence.Length; i++)
+            string a = KodgenetycznyInput.Text;
+            if (SprawdzaniePoprawnosci(a.ToCharArray()))
             {
-                if (rnaSequence[i] == 'T')
-                {
-                    rnaSequence[i] = 'U';
-                }
+                RozpoznawaczBialek(a);
             }
-
-            for (int i = 0; i < rnaSequence.Length - 2; i++)
+            else
             {
-                if (/*rnaSequence[i] == 'A' && rnaSequence[i + 1] == 'U' && rnaSequence[i + 2] == 'G'*/(rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Mer[0]))
-                {
-                    Console.WriteLine("Znaleziono kodon START");
-                    //Console.WriteLine(rnaSequence[i + 3]);
-                    //Console.WriteLine("POCZATEK KODU: "+i);
-                    //int poczatek = i; 
-                    while (!(rnaSequence[i + 2] + "" + rnaSequence[i + 3] + "" + rnaSequence[i + 4]).Contains(KodonStop[0]))
-                    {
-                        Console.Write(rnaSequence[i]);
-                        i++;
-                    }
-
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]).Contains(Gly[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Gly[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Gly[2]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Gly[3]))
-                    {
-                        Console.WriteLine("Gly (G)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Glu[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Glu[1]))
-                    {
-                        Console.WriteLine("Glu (E)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Asp[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Asp[1]))
-                    {
-                        Console.WriteLine("Asp (D)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ala[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ala[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ala[2]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ala[3]))
-                    {
-                        Console.WriteLine("Ala (A)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Val[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Val[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Val[2]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Val[3]))
-                    {
-                        Console.WriteLine("Val (V)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Arg[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Arg[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Arg[2]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Arg[3]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Arg[4]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Arg[5]))
-                    {
-                        Console.WriteLine("Arg (P)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ser[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ser[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ser[2]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ser[3]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ser[4]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ser[5]))
-                    {
-                        Console.WriteLine("Ser (S)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Lys[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Lys[1]))
-                    {
-                        Console.WriteLine("Lys (K)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]).Contains(Asn[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Asn[1]))
-                    {
-                        Console.WriteLine("Asn (N)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Thr[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Thr[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Thr[2]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Thr[3]))
-                    {
-                        Console.WriteLine("Thr (T)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ile[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ile[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Ile[2]))
-                    {
-                        Console.WriteLine("Ile (I)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Gln[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Gln[1]))
-                    {
-                        Console.WriteLine("Gln (Q)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (His[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (His[1]))
-                    {
-                        Console.WriteLine("His (H)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Pro[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Pro[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Pro[2]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Pro[3]))
-                    {
-                        Console.WriteLine("Pro (P)");
-                        continue;
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Leu[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Leu[1]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Leu[2]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Leu[3]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Leu[4]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Leu[5]))
-                    {
-                        Console.WriteLine("Leu (L)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Trp[0]))
-                    {
-                        Console.WriteLine("Trp (W)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Cys[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Cys[1]))
-                    {
-                        Console.WriteLine("Cys (C)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Tyr[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Tyr[1]))
-                    {
-                        Console.WriteLine("Tyr (Y)");
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Phe[0]) || (rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2]) == (Phe[1]))
-                    {
-                        Console.WriteLine("Phe (F)");
-                        continue;
-                    }
-                    if ((rnaSequence[i] + "" + rnaSequence[i + 1] + "" + rnaSequence[i + 2] == (Mer[0])))
-                    {
-                        Console.WriteLine("Mer (M)");
-                    }
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Nie znaleziono kodonu START");
-                }
-
+                Console.WriteLine("Kod jest błędny wpisz poprawny");
             }
         }
-        //textBox.Text = textBox.Text.ToUpper();
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             //Zmiana na duże litery w inpucie
             KodgenetycznyInput.SelectionStart = KodgenetycznyInput.Text.Length;
             KodgenetycznyInput.Text = KodgenetycznyInput.Text.ToUpper();
         }
+
+
 
         private void clear_Click(object sender, EventArgs e)
         {
@@ -186,15 +153,7 @@ namespace Czytnik_kodu_genetycznego
 
         private void Zatwierdz_Click(object sender, EventArgs e)
         {
-            string a = KodgenetycznyInput.Text;
-            if (SprawdzaniePoprawnosci(a.ToCharArray()))
-            {
-                Sprawdzanie();
-            }
-            else
-            {
-                Console.WriteLine("Kod jest błędny wpisz poprawny");
-            }
+            Sprawdzanie();
         }
     }
 }
