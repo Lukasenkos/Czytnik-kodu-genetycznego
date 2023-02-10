@@ -38,7 +38,7 @@
             this.ggToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Zatwierdz = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Infooblendzie = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             // KodgenetycznyInput
             // 
             this.KodgenetycznyInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.KodgenetycznyInput.ForeColor = System.Drawing.Color.Black;
             this.KodgenetycznyInput.Location = new System.Drawing.Point(29, 67);
             this.KodgenetycznyInput.MaxLength = 2137;
             this.KodgenetycznyInput.Name = "KodgenetycznyInput";
@@ -112,18 +113,20 @@
             this.label1.Size = new System.Drawing.Size(247, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Wpisz kod DNA lub RNA";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // checkBox1
+            // Infooblendzie
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox1.Location = new System.Drawing.Point(29, 104);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(186, 29);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Jest to kod RNA";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Infooblendzie.AutoSize = true;
+            this.Infooblendzie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Infooblendzie.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Infooblendzie.ForeColor = System.Drawing.Color.Red;
+            this.Infooblendzie.Location = new System.Drawing.Point(140, 101);
+            this.Infooblendzie.Name = "Infooblendzie";
+            this.Infooblendzie.Size = new System.Drawing.Size(331, 25);
+            this.Infooblendzie.TabIndex = 5;
+            this.Infooblendzie.Text = "Kod jest błędny, wpisz poprawny.";
+            this.Infooblendzie.Visible = false;
+            this.Infooblendzie.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
@@ -132,7 +135,7 @@
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.Infooblendzie);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Zatwierdz);
             this.Controls.Add(this.KodgenetycznyInput);
@@ -156,7 +159,7 @@
         private System.Windows.Forms.ToolStripMenuItem ggToolStripMenuItem;
         private System.Windows.Forms.Button Zatwierdz;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label Infooblendzie;
     }
 }
 
