@@ -38,6 +38,7 @@
             this.ggToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Zatwierdz = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.KodgenetycznyInput.Name = "KodgenetycznyInput";
             this.KodgenetycznyInput.Size = new System.Drawing.Size(537, 31);
             this.KodgenetycznyInput.TabIndex = 1;
+            this.KodgenetycznyInput.Text = "ATGCGTAA";
             this.KodgenetycznyInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // contextMenuStrip1
@@ -97,6 +99,7 @@
             this.Zatwierdz.TabIndex = 3;
             this.Zatwierdz.Text = "Zatwierdź";
             this.Zatwierdz.UseVisualStyleBackColor = true;
+            this.Zatwierdz.Click += new System.EventHandler(this.Zatwierdz_Click);
             // 
             // label1
             // 
@@ -111,6 +114,17 @@
             this.label1.Text = "Wpisz kod DNA lub RNA";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox1.Location = new System.Drawing.Point(29, 104);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(186, 29);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Jest to kod RNA";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +132,7 @@
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Zatwierdz);
             this.Controls.Add(this.KodgenetycznyInput);
@@ -141,6 +156,7 @@
         private System.Windows.Forms.ToolStripMenuItem ggToolStripMenuItem;
         private System.Windows.Forms.Button Zatwierdz;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
