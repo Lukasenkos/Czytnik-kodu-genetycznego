@@ -4,11 +4,8 @@ using System.Threading;
 using System.Windows.Forms;
 
 
-
 namespace Czytnik_kodu_genetycznego
 {
-
-
     public partial class Form1 : Form
     {
         Thread th;
@@ -24,51 +21,6 @@ namespace Czytnik_kodu_genetycznego
         {
 
         }
-
-        String[] Gly = { "GGG", "GGA", "GGC", "GGU" };
-        String[] Glu = { "GAG", "GAA" };
-        String[] Asp = { "GAC", "GAU" };
-        String[] Ala = { "GCG", "GCA", "GCC", "GCU" };
-        String[] Val = { "GUG", "GUA", "GUC", "GUU" };
-        String[] Arg = { "AGG", "AGA", "CGG", "CGA", "CGC", "CGU" };
-        String[] Ser = { "AGC", "AGU", "UCU", "UCC", "UCA", "UCG" };
-        String[] Lys = { "AAG", "AAA" };
-        String[] Asn = { "AAC", "AAU" };
-        String[] Thr = { "ACG", "ACA", "ACC", "ACU" };
-        String[] Mer = { "AUG" }; //Kodon START
-        String[] Ile = { "AUA", "AUC", "AUU" };
-        String[] Gln = { "CAG", "CAA" };
-        String[] His = { "CAC", "CAU" };
-        String[] Pro = { "CCG", "CCA", "CCC", "CCU" };
-        String[] Leu = { "CUG", "CUA", "CUC", "CUU", "UUG", "UUA" };
-        String[] Trp = { "UGG" };
-        String[] Cys = { "UGC", "UGU" };
-        String[] Tyr = { "UAC", "UAU" };
-        String[] Phe = { "UUC", "UUU" };
-        String[] KodonStop = { "UGA", "UAG", "UAA" };
-        String[] Kodony = {
-            "GGG", "GGA", "GGC", "GGU",
-            "GAG", "GAA",
-            "GAC", "GAU",
-            "GCG", "GCA", "GCC", "GCU",
-            "GUG", "GUA", "GUC", "GUU",
-            "AGG", "AGA", "CGG", "CGA", "CGC", "CGU",
-            "AGC", "AGU", "UCU", "UCC", "UCA", "UCG",
-            "AAG", "AAA",
-            "AAC", "AAU",
-            "ACG", "ACA", "ACC", "ACU",
-            "AUG",
-            "AUA", "AUC", "AUU",
-            "CAG", "CAA",
-            "CAC", "CAU",
-            "CCG", "CCA", "CCC", "CCU",
-            "CUG", "CUA", "CUC", "CUU", "UUG", "UUA",
-            "UGG",
-            "UGC", "UGU",
-            "UAC", "UAU",
-            "UUC", "UUU",
-            "UGA", "UAG", "UAA"
-        };
 
         public Form1()
         {
@@ -97,6 +49,11 @@ namespace Czytnik_kodu_genetycznego
             return true;
         }
 
+        string[] BialkaWyjsciowe = new string[3]; //Tu coś może błędne jest jeszcze// nie wykluczam // Ja również// xD
+        public static string[] BialkaWyjsciowe1 = new string[3];
+
+        int blad = 0;
+
         void RozpoznawaczBialek()
         {
             char[] KodGenetyczny = KodgenetycznyInput.Text.ToCharArray();
@@ -109,216 +66,275 @@ namespace Czytnik_kodu_genetycznego
                     KodGenetyczny[i] = 'U';
                 }
             }
-
-            for (int ii = 0; ii < 3; ii++)
+            for (int ii = 0, j = 0; ii < 3; ii++, j++)
             {
                 for (int i = ii; i < KodGenetyczny.Length - 2; i = i + 3)
                 {
-
                     switch (KodGenetyczny[i].ToString() + KodGenetyczny[i + 1].ToString() + KodGenetyczny[i + 2].ToString())
                     {
                         //Kodon Start
                         case "AUG":
                             Console.WriteLine("M(START)");
+                            BialkaWyjsciowe[j] += "M";
                             break;
                         //
                         case "GGG":
                             Console.WriteLine("G");
+                            BialkaWyjsciowe[j] += "G";
                             break;
                         case "GGA":
                             Console.WriteLine("G");
+                            BialkaWyjsciowe[j] += "G";
                             break;
                         case "GGC":
                             Console.WriteLine("G");
+                            BialkaWyjsciowe[j] += "G";
                             break;
                         case "GGU":
                             Console.WriteLine("G");
+                            BialkaWyjsciowe[j] += "G";
                             break;
                         //
                         case "GAG":
                             Console.WriteLine("E");
+                            BialkaWyjsciowe[j] += "E";
                             break;
                         case "GAA":
                             Console.WriteLine("E");
+                            BialkaWyjsciowe[j] += "E";
                             break;
                         //
                         case "GAC":
                             Console.WriteLine("D");
+                            BialkaWyjsciowe[j] += "D";
                             break;
                         case "GAU":
                             Console.WriteLine("D");
+                            BialkaWyjsciowe[j] += "D";
                             break;
                         //
                         case "GCG":
                             Console.WriteLine("A");
+                            BialkaWyjsciowe[j] += "A";
                             break;
                         case "GCA":
                             Console.WriteLine("A");
+                            BialkaWyjsciowe[j] += "A";
                             break;
                         case "GCC":
                             Console.WriteLine("A");
+                            BialkaWyjsciowe[j] += "A";
                             break;
                         case "GCU":
                             Console.WriteLine("A");
+                            BialkaWyjsciowe[j] += "A";
                             break;
                         //
                         case "GUG":
                             Console.WriteLine("V");
+                            BialkaWyjsciowe[j] += "V";
                             break;
                         case "GUA":
                             Console.WriteLine("V");
+                            BialkaWyjsciowe[j] += "V";
                             break;
                         case "GUC":
                             Console.WriteLine("V");
+                            BialkaWyjsciowe[j] += "V";
                             break;
                         case "GUU":
                             Console.WriteLine("V");
+                            BialkaWyjsciowe[j] += "V";
                             break;
                         //
                         case "AGG":
                             Console.WriteLine("R");
+                            BialkaWyjsciowe[j] += "R";
                             break;
                         case "AGA":
                             Console.WriteLine("R");
+                            BialkaWyjsciowe[j] += "R";
                             break;
                         case "CGG":
                             Console.WriteLine("R");
+                            BialkaWyjsciowe[j] += "R";
                             break;
                         case "CGA":
                             Console.WriteLine("R");
+                            BialkaWyjsciowe[j] += "R";
                             break;
                         case "CGC":
                             Console.WriteLine("R");
+                            BialkaWyjsciowe[j] += "R";
                             break;
                         case "CGU":
                             Console.WriteLine("R");
+                            BialkaWyjsciowe[j] += "R";
                             break;
                         //
                         case "AGC":
                             Console.WriteLine("S");
+                            BialkaWyjsciowe[j] += "S";
                             break;
                         case "AGU":
                             Console.WriteLine("S");
+                            BialkaWyjsciowe[j] += "S";
                             break;
                         case "UCU":
                             Console.WriteLine("S");
+                            BialkaWyjsciowe[j] += "S";
                             break;
                         case "UCC":
                             Console.WriteLine("S");
+                            BialkaWyjsciowe[j] += "S";
                             break;
                         case "UCA":
                             Console.WriteLine("S");
+                            BialkaWyjsciowe[j] += "S";
                             break;
                         case "UCG":
                             Console.WriteLine("S");
+                            BialkaWyjsciowe[j] += "S";
                             break;
                         //
                         case "AAG":
                             Console.WriteLine("K");
+                            BialkaWyjsciowe[j] += "K";
                             break;
                         case "AAA":
                             Console.WriteLine("K");
+                            BialkaWyjsciowe[j] += "K";
                             break;
                         //
                         case "AAC":
                             Console.WriteLine("N");
+                            BialkaWyjsciowe[j] += "N";
                             break;
                         case "AAU":
                             Console.WriteLine("N");
+                            BialkaWyjsciowe[j] += "N";
                             break;
                         //
                         case "ACG":
                             Console.WriteLine("T");
+                            BialkaWyjsciowe[j] += "T";
                             break;
                         case "ACA":
                             Console.WriteLine("T");
+                            BialkaWyjsciowe[j] += "T";
                             break;
                         case "ACC":
                             Console.WriteLine("T");
+                            BialkaWyjsciowe[j] += "T";
                             break;
                         case "ACU":
                             Console.WriteLine("T");
+                            BialkaWyjsciowe[j] += "T";
                             break;
                         //
                         case "AUA":
                             Console.WriteLine("I");
+                            BialkaWyjsciowe[j] += "I";
                             break;
                         case "AUC":
                             Console.WriteLine("I");
+                            BialkaWyjsciowe[j] += "I";
                             break;
                         case "AUU":
                             Console.WriteLine("I");
+                            BialkaWyjsciowe[j] += "I";
                             break;
                         //
                         case "CAG":
                             Console.WriteLine("Q");
+                            BialkaWyjsciowe[j] += "Q";
                             break;
                         case "CAA":
                             Console.WriteLine("Q");
+                            BialkaWyjsciowe[j] += "Q";
                             break;
                         //
                         case "CAC":
                             Console.WriteLine("H");
+                            BialkaWyjsciowe[j] += "H";
                             break;
                         case "CAU":
                             Console.WriteLine("H");
+                            BialkaWyjsciowe[j] += "H";
                             break;
                         //
                         case "CCG":
                             Console.WriteLine("P");
+                            BialkaWyjsciowe[j] += "P";
                             break;
                         case "CCA":
                             Console.WriteLine("P");
+                            BialkaWyjsciowe[j] += "P";
                             break;
                         case "CCC":
                             Console.WriteLine("P");
+                            BialkaWyjsciowe[j] += "P";
                             break;
                         case "CCU":
                             Console.WriteLine("P");
+                            BialkaWyjsciowe[j] += "P";
                             break;
                         //
                         case "CUG":
                             Console.WriteLine("L");
+                            BialkaWyjsciowe[j] += "L";
                             break;
                         case "CUA":
                             Console.WriteLine("L");
+                            BialkaWyjsciowe[j] += "L";
                             break;
                         case "CUC":
                             Console.WriteLine("L");
+                            BialkaWyjsciowe[j] += "L";
                             break;
                         case "CUU":
                             Console.WriteLine("L");
+                            BialkaWyjsciowe[j] += "L";
                             break;
                         case "UUG":
                             Console.WriteLine("L");
+                            BialkaWyjsciowe[j] += "L";
                             break;
                         case "UUA":
                             Console.WriteLine("L");
+                            BialkaWyjsciowe[j] += "L";
                             break;
                         //
                         case "UGG":
                             Console.WriteLine("W");
+                            BialkaWyjsciowe[j] += "W";
                             break;
                         //
                         case "UGC":
                             Console.WriteLine("C");
+                            BialkaWyjsciowe[j] += "C";
                             break;
                         case "UGU":
                             Console.WriteLine("C");
+                            BialkaWyjsciowe[j] += "C";
                             break;
                         //
                         case "UAC":
                             Console.WriteLine("Y");
+                            BialkaWyjsciowe[j] += "Y";
                             break;
                         case "UAU":
                             Console.WriteLine("Y");
+                            BialkaWyjsciowe[j] += "Y";
                             break;
                         //
                         case "UUC":
                             Console.WriteLine("F");
+                            BialkaWyjsciowe[j] += "F";
                             break;
                         case "UUU":
                             Console.WriteLine("F");
+                            BialkaWyjsciowe[j] += "F";
                             break;
                         //
                         case "UGA":
@@ -335,24 +351,92 @@ namespace Czytnik_kodu_genetycznego
                             break;
                         //
                         default:
-                            Console.WriteLine("Coś się zjebało.");
+                            Console.WriteLine("Coś się zepsuło.");
                             break;
                     }
-
                 }
                 Console.WriteLine("=======================");
 
-
             }
-
+            for (int i = 0, j = 0; i < BialkaWyjsciowe.Length && j < 3; i++, j++)
+            {
+                switch (BialkaWyjsciowe.ToString())
+                {
+                    case "M":
+                        BialkaWyjsciowe1[j] += "M";
+                        break;
+                    case "G":
+                        BialkaWyjsciowe1[j] += "G";
+                        break;
+                    case "E":
+                        BialkaWyjsciowe1[j] += "E";
+                        break;
+                    case "D":
+                        BialkaWyjsciowe1[j] += "D";
+                        break;
+                    case "A":
+                        BialkaWyjsciowe1[j] += "A";
+                        break;
+                    case "V":
+                        BialkaWyjsciowe1[j] += "V";
+                        break;
+                    case "R":
+                        BialkaWyjsciowe1[j] += "R";
+                        break;
+                    case "S":
+                        BialkaWyjsciowe1[j] += "S";
+                        break;
+                    case "K":
+                        BialkaWyjsciowe1[j] += "K";
+                        break;
+                    case "N":
+                        BialkaWyjsciowe1[j] += "N";
+                        break;
+                    case "T":
+                        BialkaWyjsciowe1[j] += "T";
+                        break;
+                    case "I":
+                        BialkaWyjsciowe1[j] += "I";
+                        break;
+                    case "Q":
+                        BialkaWyjsciowe1[j] += "Q";
+                        break;
+                    case "H":
+                        BialkaWyjsciowe1[j] += "H";
+                        break;
+                    case "P":
+                        BialkaWyjsciowe1[j] += "P";
+                        break;
+                    case "L":
+                        BialkaWyjsciowe1[j] += "L";
+                        break;
+                    case "W":
+                        BialkaWyjsciowe1[j] += "W";
+                        break;
+                    case "C":
+                        BialkaWyjsciowe1[j] += "C";
+                        break;
+                    case "Y":
+                        BialkaWyjsciowe1[j] += "T";
+                        break;
+                    case "F":
+                        BialkaWyjsciowe1[j] += "F";
+                        break;
+                    default:
+                        Console.Error.WriteLine("BŁĄD CEPIE. WYP(i)Ełniaj go  ( °ʖ° ). (╯°□°)╯︵ ┻━┻");
+                        break;
+                        //goto Form1_Load;
+                }
+            }
         }
 
-
+        public static string KodgenetycznyCheck = "";
         void Sprawdzanie()
         {
             //Sprawdzanie poprawności danych
-            string a = KodgenetycznyInput.Text;
-            if (SprawdzaniePoprawnosci(a.ToCharArray()))
+            KodgenetycznyCheck = KodgenetycznyInput.Text;
+
+            if (SprawdzaniePoprawnosci(KodgenetycznyCheck.ToCharArray()))
             {
                 RozpoznawaczBialek();
             }
@@ -379,7 +463,7 @@ namespace Czytnik_kodu_genetycznego
 
         private void label1_Click(object sender, EventArgs e)
         {
-        //Nie usuwać :)
+            //Nie usuwać :)
         }
 
         private void Zatwierdz_Click(object sender, EventArgs e)
@@ -391,15 +475,18 @@ namespace Czytnik_kodu_genetycznego
             //    Console.WriteLine(Kodony[j]);
             //}
             Sprawdzanie();
-            string a = KodgenetycznyInput.Text;
-            if (SprawdzaniePoprawnosci(a.ToCharArray()))
+            string KodgenetycznyCheck = KodgenetycznyInput.Text;
+            if (SprawdzaniePoprawnosci(KodgenetycznyCheck.ToCharArray()))
             {
                 th = new Thread(opennewform);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
 
+
                 Infooblendzie.Hide();
                 KodgenetycznyInput.ForeColor = Color.Black;
+                this.Close();
+
             }
             else
             {
@@ -419,27 +506,6 @@ namespace Czytnik_kodu_genetycznego
 
     }
 }
-
-
-
-/*
-String[] baza = KodgenetycznyInput.Text.ToString();
-String[] trzy = { "" };
-for (int i = 0; i < KodGenetyczny.Length; i++)
-    {
-        trzy = baza[i] + "" + baza[i+1] + "" + baza[i+2];
-    }
-switch (trzy)
-    {
-        case "AUG":
-            Console.WriteLine("M(Start)");
-            break;
-
-        case "UAA"||"UAG"||"UGA":
-            Console.WriteLine("Stop");
-            break;
-AMOGUS
-*/
 
 /*
  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⢆⡱⢫⡟⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⢿⣻⢿⣟⡿⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

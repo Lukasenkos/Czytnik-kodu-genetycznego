@@ -6,3 +6,4 @@
 4. 
 5. 
 6. Optymalizacja w przyszłości ??? (po co to kumu xDDDDD)
+#Czemu nasz kod to jeden wielki FrankenStein XDDDD?
