@@ -39,6 +39,7 @@
             this.Zatwierdz = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Infooblendzie = new System.Windows.Forms.Label();
+            this.Wczytajzplikubutton = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             this.KodgenetycznyInput.MaxLength = 213769420;
             this.KodgenetycznyInput.Multiline = true;
             this.KodgenetycznyInput.Name = "KodgenetycznyInput";
-            this.KodgenetycznyInput.Size = new System.Drawing.Size(537, 20);
+            this.KodgenetycznyInput.Size = new System.Drawing.Size(537, 31);
             this.KodgenetycznyInput.TabIndex = 1;
             this.KodgenetycznyInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -128,6 +129,16 @@
             this.Infooblendzie.Visible = false;
             this.Infooblendzie.Click += new System.EventHandler(this.label2_Click);
             // 
+            // Wczytajzplikubutton
+            // 
+            this.Wczytajzplikubutton.Location = new System.Drawing.Point(572, 104);
+            this.Wczytajzplikubutton.Name = "Wczytajzplikubutton";
+            this.Wczytajzplikubutton.Size = new System.Drawing.Size(192, 31);
+            this.Wczytajzplikubutton.TabIndex = 6;
+            this.Wczytajzplikubutton.Text = "Wczytaj z pliku...";
+            this.Wczytajzplikubutton.UseVisualStyleBackColor = true;
+            this.Wczytajzplikubutton.Click += new System.EventHandler(this.Wczytajzplikubutton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +146,7 @@
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Wczytajzplikubutton);
             this.Controls.Add(this.Infooblendzie);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Zatwierdz);
@@ -160,6 +172,7 @@
         private System.Windows.Forms.Button Zatwierdz;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Infooblendzie;
+        private System.Windows.Forms.Button Wczytajzplikubutton;
     }
 }
 

@@ -49,10 +49,9 @@ namespace Czytnik_kodu_genetycznego
             return true;
         }
 
-        string[] BialkaWyjsciowe = new string[3]; //Tu coś może błędne jest jeszcze// nie wykluczam // Ja również// xD
-        public static string[] BialkaWyjsciowe1 = new string[3];
+        public String[] BialkaWyjsciowe = new String[3]; //Tu coś może błędne jest jeszcze// nie wykluczam // Ja również// xD // Nic się nie zmieniło, nikt nic nie wie
+        public static String[] BialkaWyjsciowe1 = new String[3];
 
-        int blad = 0;
 
         void RozpoznawaczBialek()
         {
@@ -356,78 +355,166 @@ namespace Czytnik_kodu_genetycznego
                     }
                 }
                 Console.WriteLine("=======================");
-
             }
-            for (int i = 0, j = 0; i < BialkaWyjsciowe.Length && j < 3; i++, j++)
+
+            //Console.WriteLine(BialkaWyjsciowe[1].ToString());
+
+            foreach (String Kodony in BialkaWyjsciowe)
             {
-                switch (BialkaWyjsciowe.ToString())
+                Console.WriteLine(Kodony);
+                Console.WriteLine("==============TEST===============");
+                //      |
+                //      | To działało, a już nie \_(;_;)_/
+                //      |
+                //     \ /
+                //      v
+                for (int j = 0; j < 3; j++)
                 {
-                    case "M":
-                        BialkaWyjsciowe1[j] += "M";
-                        break;
-                    case "G":
-                        BialkaWyjsciowe1[j] += "G";
-                        break;
-                    case "E":
-                        BialkaWyjsciowe1[j] += "E";
-                        break;
-                    case "D":
-                        BialkaWyjsciowe1[j] += "D";
-                        break;
-                    case "A":
-                        BialkaWyjsciowe1[j] += "A";
-                        break;
-                    case "V":
-                        BialkaWyjsciowe1[j] += "V";
-                        break;
-                    case "R":
-                        BialkaWyjsciowe1[j] += "R";
-                        break;
-                    case "S":
-                        BialkaWyjsciowe1[j] += "S";
-                        break;
-                    case "K":
-                        BialkaWyjsciowe1[j] += "K";
-                        break;
-                    case "N":
-                        BialkaWyjsciowe1[j] += "N";
-                        break;
-                    case "T":
-                        BialkaWyjsciowe1[j] += "T";
-                        break;
-                    case "I":
-                        BialkaWyjsciowe1[j] += "I";
-                        break;
-                    case "Q":
-                        BialkaWyjsciowe1[j] += "Q";
-                        break;
-                    case "H":
-                        BialkaWyjsciowe1[j] += "H";
-                        break;
-                    case "P":
-                        BialkaWyjsciowe1[j] += "P";
-                        break;
-                    case "L":
-                        BialkaWyjsciowe1[j] += "L";
-                        break;
-                    case "W":
-                        BialkaWyjsciowe1[j] += "W";
-                        break;
-                    case "C":
-                        BialkaWyjsciowe1[j] += "C";
-                        break;
-                    case "Y":
-                        BialkaWyjsciowe1[j] += "T";
-                        break;
-                    case "F":
-                        BialkaWyjsciowe1[j] += "F";
-                        break;
-                    default:
-                        Console.Error.WriteLine("BŁĄD CEPIE. WYP(i)Ełniaj go  ( °ʖ° ). (╯°□°)╯︵ ┻━┻");
-                        break;
-                        //goto Form1_Load;
+                    switch (BialkaWyjsciowe[j])
+                    {
+                        case "M":
+                            Console.WriteLine("GIMME FUCKING MMMM !!!");
+                            BialkaWyjsciowe1[j] += "M";
+                            break;
+                        case "G":
+                            BialkaWyjsciowe1[j] += "G";
+                            break;
+                        case "E":
+                            BialkaWyjsciowe1[j] += "E";
+                            break;
+                        case "D":
+                            BialkaWyjsciowe1[j] += "D";
+                            break;
+                        case "A":
+                            BialkaWyjsciowe1[j] += "A";
+                            break;
+                        case "V":
+                            BialkaWyjsciowe1[j] += "V";
+                            break;
+                        case "R":
+                            BialkaWyjsciowe1[j] += "R";
+                            break;
+                        case "S":
+                            BialkaWyjsciowe1[j] += "S";
+                            break;
+                        case "K":
+                            BialkaWyjsciowe1[j] += "K";
+                            break;
+                        case "N":
+                            BialkaWyjsciowe1[j] += "N";
+                            break;
+                        case "T":
+                            BialkaWyjsciowe1[j] += "T";
+                            break;
+                        case "I":
+                            BialkaWyjsciowe1[j] += "I";
+                            break;
+                        case "Q":
+                            BialkaWyjsciowe1[j] += "Q";
+                            break;
+                        case "H":
+                            BialkaWyjsciowe1[j] += "H";
+                            break;
+                        case "P":
+                            BialkaWyjsciowe1[j] += "P";
+                            break;
+                        case "L":
+                            BialkaWyjsciowe1[j] += "L";
+                            break;
+                        case "W":
+                            BialkaWyjsciowe1[j] += "W";
+                            break;
+                        case "C":
+                            BialkaWyjsciowe1[j] += "C";
+                            break;
+                        case "Y":
+                            BialkaWyjsciowe1[j] += "T";
+                            break;
+                        case "F":
+                            BialkaWyjsciowe1[j] += "F";
+                            break;
+                        default:
+                            Console.WriteLine("WHY THE F THIS SHI DONT WANNA WORK");
+                            Console.Error.WriteLine("TO WCALE NIE JEST BLAD, to tylko informacja że kod się wykopał do tego miejsca :))))))))))))");
+                            break;
+                    }
                 }
             }
+
+            //for (int j = 0; j < 3; j++)
+            //{
+            //for (int i = 0; i < BialkaWyjsciowe.Length; i++)
+            //{
+            //switch (BialkaWyjsciowe[1].ToString())
+            //{
+            //    case "M":
+            //        Console.WriteLine("GIMME FUCKING MMMM !!!");
+            //        BialkaWyjsciowe1[j] += "M";
+            //        break;
+            //    case "G":
+            //        BialkaWyjsciowe1[j] += "G";
+            //        break;
+            //    case "E":
+            //        BialkaWyjsciowe1[j] += "E";
+            //        break;
+            //    case "D":
+            //        BialkaWyjsciowe1[j] += "D";
+            //        break;
+            //    case "A":
+            //        BialkaWyjsciowe1[j] += "A";
+            //        break;
+            //    case "V":
+            //        BialkaWyjsciowe1[j] += "V";
+            //        break;
+            //    case "R":
+            //        BialkaWyjsciowe1[j] += "R";
+            //        break;
+            //    case "S":
+            //        BialkaWyjsciowe1[j] += "S";
+            //        break;
+            //    case "K":
+            //        BialkaWyjsciowe1[j] += "K";
+            //        break;
+            //    case "N":
+            //        BialkaWyjsciowe1[j] += "N";
+            //        break;
+            //    case "T":
+            //        BialkaWyjsciowe1[j] += "T";
+            //        break;
+            //    case "I":
+            //        BialkaWyjsciowe1[j] += "I";
+            //        break;
+            //    case "Q":
+            //        BialkaWyjsciowe1[j] += "Q";
+            //        break;
+            //    case "H":
+            //        BialkaWyjsciowe1[j] += "H";
+            //        break;
+            //    case "P":
+            //        BialkaWyjsciowe1[j] += "P";
+            //        break;
+            //    case "L":
+            //        BialkaWyjsciowe1[j] += "L";
+            //        break;
+            //    case "W":
+            //        BialkaWyjsciowe1[j] += "W";
+            //        break;
+            //    case "C":
+            //        BialkaWyjsciowe1[j] += "C";
+            //        break;
+            //    case "Y":
+            //        BialkaWyjsciowe1[j] += "T";
+            //        break;
+            //    case "F":
+            //        BialkaWyjsciowe1[j] += "F";
+            //        break;
+            //    default:
+            //        Console.WriteLine("WHY THE F THIS SHI DONT WANNA WORK");
+            //        Console.Error.WriteLine("TO WCALE NIE JEST BLAD, to tylko informacja że kod się wykopał do tego miejsca :))))))))))))");
+            //        break;
+            //}
+            //}
+            //}
         }
 
         public static string KodgenetycznyCheck = "";
@@ -463,7 +550,8 @@ namespace Czytnik_kodu_genetycznego
 
         private void label1_Click(object sender, EventArgs e)
         {
-            //Nie usuwać :)
+            //Nie usuwać :)  //Nie wiadomo co robi, ale jak tego nie ma to jest błąd :/
+            //można zostawić jako estereeg :))))))))))))))))
         }
 
         private void Zatwierdz_Click(object sender, EventArgs e)
@@ -474,6 +562,7 @@ namespace Czytnik_kodu_genetycznego
             //{
             //    Console.WriteLine(Kodony[j]);
             //}
+
             Sprawdzanie();
             string KodgenetycznyCheck = KodgenetycznyInput.Text;
             if (SprawdzaniePoprawnosci(KodgenetycznyCheck.ToCharArray()))
@@ -486,6 +575,9 @@ namespace Czytnik_kodu_genetycznego
                 Infooblendzie.Hide();
                 KodgenetycznyInput.ForeColor = Color.Black;
                 this.Close();
+                Console.WriteLine("TESTY!!!" + BialkaWyjsciowe1[0]);
+                Console.WriteLine("TESTY!!!" + BialkaWyjsciowe1[1]);
+                Console.WriteLine("TESTY!!!" + BialkaWyjsciowe1[2]);
 
             }
             else
@@ -504,6 +596,29 @@ namespace Czytnik_kodu_genetycznego
             Application.Run(new Form2());
         }
 
+        String path;
+
+        private void Wczytajzplikubutton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                path = ofd.FileName;
+                string WczytaneDane = System.IO.File.ReadAllText(path);
+                KodgenetycznyInput.Text = WczytaneDane;
+                Zatwierdz_Click(sender, e);
+            }
+            else Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+
+
+            //Takie o coś do ścieżki pliku v2
+            //openFileDialog.Filter = "Pliki tekstowe (*.txt)|*.txt|Wszystkie pliki (*.*)|*.*";
+            //openFileDialog.Title = "Wybierz plik do wczytania";
+
+        }
     }
 }
 

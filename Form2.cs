@@ -34,14 +34,18 @@ namespace Czytnik_kodu_genetycznego
             if (Form1.BialkaWyjsciowe1[0] != null)
             {
                 SekwencjaDNA1.Text = Form1.BialkaWyjsciowe1[0].ToString();
-            }else
+            }
             if (Form1.BialkaWyjsciowe1[1] != null)
             {
                 SekwencjaDNA2.Text = Form1.BialkaWyjsciowe1[1].ToString();
-            }else
+            }
             if (Form1.BialkaWyjsciowe1[2] != null)
             {
                 SekwencjaDNA3.Text = Form1.BialkaWyjsciowe1[2].ToString();
+            }
+            else
+            {
+                Console.WriteLine("PUSTE");
             }
         }
 
