@@ -63,6 +63,7 @@
             this.KodgenetycznyInput.Name = "KodgenetycznyInput";
             this.KodgenetycznyInput.Size = new System.Drawing.Size(537, 31);
             this.KodgenetycznyInput.TabIndex = 1;
+            this.KodgenetycznyInput.WordWrap = false;
             this.KodgenetycznyInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // contextMenuStrip1

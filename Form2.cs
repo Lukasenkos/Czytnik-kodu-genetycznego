@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -28,25 +21,36 @@ namespace Czytnik_kodu_genetycznego
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            
+
             Kodgenetycznywyjscie.Text = Form1.KodgenetycznyCheck;
 
-            if (Form1.BialkaWyjsciowe1[0] != null)
+            if (Form1.BialkaWyjsciowe1[0] != null || Form1.BialkaWyjsciowe1[0] != "a")
             {
                 SekwencjaDNA1.Text = Form1.BialkaWyjsciowe1[0].ToString();
             }
-            if (Form1.BialkaWyjsciowe1[1] != null)
+            else
+            {
+                Console.WriteLine("NULL 1");
+            }
+
+            if (Form1.BialkaWyjsciowe1[1] != null || Form1.BialkaWyjsciowe1[0] != "a")
             {
                 SekwencjaDNA2.Text = Form1.BialkaWyjsciowe1[1].ToString();
             }
-            if (Form1.BialkaWyjsciowe1[2] != null)
+            else
+            {
+                Console.WriteLine("NULL 2");
+            }
+
+            if (Form1.BialkaWyjsciowe1[2] != null || Form1.BialkaWyjsciowe1[0] != "a")
             {
                 SekwencjaDNA3.Text = Form1.BialkaWyjsciowe1[2].ToString();
             }
             else
             {
-                Console.WriteLine("PUSTE");
+                Console.WriteLine("NULL 3");
             }
+
         }
 
         private void Kodgenetycznywyjscie_TextChanged(object sender, EventArgs e)

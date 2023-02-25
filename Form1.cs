@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -22,6 +23,15 @@ namespace Czytnik_kodu_genetycznego
 
         }
 
+        /*
+         
+         Kod be like:
+         jaki brzydki. No nic, najważniejsze, że działa.
+         
+         
+         */
+
+
         public Form1()
         {
             InitializeComponent();
@@ -41,7 +51,7 @@ namespace Czytnik_kodu_genetycznego
                 }
                 else
                 {
-                    Console.WriteLine("Wykryto nie poprawny GEN: " + i + " " + rnaSequence[i]);
+                    Console.WriteLine("Wykryto nie poprawny GEN: " + i + " | " + rnaSequence[i] + " |");
                     return false;
                 }
             }
@@ -49,8 +59,8 @@ namespace Czytnik_kodu_genetycznego
             return true;
         }
 
-        public String[] BialkaWyjsciowe = new String[3]; //Tu coś może błędne jest jeszcze// nie wykluczam // Ja również// xD // Nic się nie zmieniło, nikt nic nie wie
-        public static String[] BialkaWyjsciowe1 = new String[3];
+        public string[] BialkaWyjsciowe = new string[3]; //Tu coś może błędne jest jeszcze// nie wykluczam // Ja również// xD // Nic się nie zmieniło, nikt nic nie wie
+        public static string[] BialkaWyjsciowe1 = new string[] { "", "", "" };
 
 
         void RozpoznawaczBialek()
@@ -357,23 +367,253 @@ namespace Czytnik_kodu_genetycznego
                 Console.WriteLine("=======================");
             }
 
-            //Console.WriteLine(BialkaWyjsciowe[1].ToString());
-
-            foreach (String Kodony in BialkaWyjsciowe)
+            //Console.WriteLine(BialkaWyjsciowe[0].ToString());
+            for (int j = 0; j < 3; j++)
             {
-                Console.WriteLine(Kodony);
-                Console.WriteLine("==============TEST===============");
-                //      |
-                //      | To działało, a już nie \_(;_;)_/
-                //      |
-                //     \ /
-                //      v
-                for (int j = 0; j < 3; j++)
+                if (BialkaWyjsciowe[j] == null)
                 {
-                    switch (BialkaWyjsciowe[j])
+                    BialkaWyjsciowe[j] += "a";
+                    break;
+                }
+
+                if (BialkaWyjsciowe[j].ToString().Contains("M"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("M"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "M";
+                    }
+                    break;
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("G"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("G"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "G";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("E"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("E"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "E";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("D"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("D"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "D";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("A"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("A"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "A";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("V"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("V"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "V";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("R"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("R"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "R";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("S"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("S"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "S";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("K"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("K"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "K";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("N"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("N"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "N";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("T"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("T"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "T";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("I"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("I"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "I";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("Q"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("Q"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "Q";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("H"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("H"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "H";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("P"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("P"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "P";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("L"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("L"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "L";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("W"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("W"))
+                    {
+                        break;
+
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "W";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("C"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("C"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "C";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("Y"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("Y"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "Y";
+                    }
+                }
+                if (BialkaWyjsciowe[j].ToString().Contains("F"))
+                {
+                    if (BialkaWyjsciowe1[j].ToString().Contains("F"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        BialkaWyjsciowe1[j] += "F";
+                    }
+                }
+            }
+
+            //foreach (String Kodony in BialkaWyjsciowe)
+            //{
+            //    //Console.WriteLine(Kodony);
+            //    //Console.WriteLine("==============TEST===============");
+                
+            //}
+
+            for (int j = 0; j < 3; j++)
+            {
+                for (int i = 0; i < BialkaWyjsciowe.Length; i++)
+                {
+                    switch (BialkaWyjsciowe[j].ToString())
                     {
                         case "M":
-                            Console.WriteLine("GIMME FUCKING MMMM !!!");
                             BialkaWyjsciowe1[j] += "M";
                             break;
                         case "G":
@@ -434,94 +674,20 @@ namespace Czytnik_kodu_genetycznego
                             BialkaWyjsciowe1[j] += "F";
                             break;
                         default:
-                            Console.WriteLine("WHY THE F THIS SHI DONT WANNA WORK");
-                            Console.Error.WriteLine("TO WCALE NIE JEST BLAD, to tylko informacja że kod się wykopał do tego miejsca :))))))))))))");
+                            Console.WriteLine("DEBUGI");
+                            //Console.Error.WriteLine("TO WCALE NIE JEST BLAD, to tylko informacja że kod się wykopał do tego miejsca :))))))))))))");
                             break;
                     }
                 }
             }
-
-            //for (int j = 0; j < 3; j++)
-            //{
-            //for (int i = 0; i < BialkaWyjsciowe.Length; i++)
-            //{
-            //switch (BialkaWyjsciowe[1].ToString())
-            //{
-            //    case "M":
-            //        Console.WriteLine("GIMME FUCKING MMMM !!!");
-            //        BialkaWyjsciowe1[j] += "M";
-            //        break;
-            //    case "G":
-            //        BialkaWyjsciowe1[j] += "G";
-            //        break;
-            //    case "E":
-            //        BialkaWyjsciowe1[j] += "E";
-            //        break;
-            //    case "D":
-            //        BialkaWyjsciowe1[j] += "D";
-            //        break;
-            //    case "A":
-            //        BialkaWyjsciowe1[j] += "A";
-            //        break;
-            //    case "V":
-            //        BialkaWyjsciowe1[j] += "V";
-            //        break;
-            //    case "R":
-            //        BialkaWyjsciowe1[j] += "R";
-            //        break;
-            //    case "S":
-            //        BialkaWyjsciowe1[j] += "S";
-            //        break;
-            //    case "K":
-            //        BialkaWyjsciowe1[j] += "K";
-            //        break;
-            //    case "N":
-            //        BialkaWyjsciowe1[j] += "N";
-            //        break;
-            //    case "T":
-            //        BialkaWyjsciowe1[j] += "T";
-            //        break;
-            //    case "I":
-            //        BialkaWyjsciowe1[j] += "I";
-            //        break;
-            //    case "Q":
-            //        BialkaWyjsciowe1[j] += "Q";
-            //        break;
-            //    case "H":
-            //        BialkaWyjsciowe1[j] += "H";
-            //        break;
-            //    case "P":
-            //        BialkaWyjsciowe1[j] += "P";
-            //        break;
-            //    case "L":
-            //        BialkaWyjsciowe1[j] += "L";
-            //        break;
-            //    case "W":
-            //        BialkaWyjsciowe1[j] += "W";
-            //        break;
-            //    case "C":
-            //        BialkaWyjsciowe1[j] += "C";
-            //        break;
-            //    case "Y":
-            //        BialkaWyjsciowe1[j] += "T";
-            //        break;
-            //    case "F":
-            //        BialkaWyjsciowe1[j] += "F";
-            //        break;
-            //    default:
-            //        Console.WriteLine("WHY THE F THIS SHI DONT WANNA WORK");
-            //        Console.Error.WriteLine("TO WCALE NIE JEST BLAD, to tylko informacja że kod się wykopał do tego miejsca :))))))))))))");
-            //        break;
-            //}
-            //}
-            //}
         }
 
         public static string KodgenetycznyCheck = "";
         void Sprawdzanie()
         {
             //Sprawdzanie poprawności danych
-            KodgenetycznyCheck = KodgenetycznyInput.Text;
+
+            KodgenetycznyCheck = KodgenetycznyInput.Text.ToString();
 
             if (SprawdzaniePoprawnosci(KodgenetycznyCheck.ToCharArray()))
             {
@@ -536,9 +702,7 @@ namespace Czytnik_kodu_genetycznego
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             //Zmiana na duże litery w inpucie
-            //KodgenetycznyInput.SelectionStart = KodgenetycznyInput.Text.Length;
             //KodgenetycznyInput.Text = KodgenetycznyInput.Text.ToUpper();
-
         }
 
 
@@ -556,12 +720,9 @@ namespace Czytnik_kodu_genetycznego
 
         private void Zatwierdz_Click(object sender, EventArgs e)
         {
-            //RozpoznawaczBialek();
-            //Console.WriteLine("KODONY");
-            //for (int j = 0; j < 64; j++)
-            //{
-            //    Console.WriteLine(Kodony[j]);
-            //}
+            //String ki = KodgenetycznyInput.Text.Replace(" ", "");
+
+            KodgenetycznyInput.Text = KodgenetycznyInput.Text.Replace(" ", "").ToUpper();
 
             Sprawdzanie();
             string KodgenetycznyCheck = KodgenetycznyInput.Text;
@@ -575,10 +736,6 @@ namespace Czytnik_kodu_genetycznego
                 Infooblendzie.Hide();
                 KodgenetycznyInput.ForeColor = Color.Black;
                 this.Close();
-                Console.WriteLine("TESTY!!!" + BialkaWyjsciowe1[0]);
-                Console.WriteLine("TESTY!!!" + BialkaWyjsciowe1[1]);
-                Console.WriteLine("TESTY!!!" + BialkaWyjsciowe1[2]);
-
             }
             else
             {
@@ -586,10 +743,7 @@ namespace Czytnik_kodu_genetycznego
 
                 Infooblendzie.Show();
                 Console.WriteLine("BŁĄD!!!");
-
             }
-
-
         }
         private void opennewform(object obj)
         {
@@ -610,7 +764,7 @@ namespace Czytnik_kodu_genetycznego
                 KodgenetycznyInput.Text = WczytaneDane;
                 Zatwierdz_Click(sender, e);
             }
-            else Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            else Console.WriteLine("BŁĄD OKNA DIALOGOWEGO!");
 
 
 
