@@ -39,15 +39,15 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(211, 86);
+            this.pictureBox1.Location = new System.Drawing.Point(86, 76);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(367, 276);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 280);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // NatepnyButton
             // 
-            this.NatepnyButton.Location = new System.Drawing.Point(678, 204);
+            this.NatepnyButton.Location = new System.Drawing.Point(507, 202);
             this.NatepnyButton.Name = "NatepnyButton";
             this.NatepnyButton.Size = new System.Drawing.Size(75, 23);
             this.NatepnyButton.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // PoprzedniButton
             // 
-            this.PoprzedniButton.Location = new System.Drawing.Point(40, 204);
+            this.PoprzedniButton.Location = new System.Drawing.Point(-4, 185);
             this.PoprzedniButton.Name = "PoprzedniButton";
             this.PoprzedniButton.Size = new System.Drawing.Size(75, 23);
             this.PoprzedniButton.TabIndex = 2;
@@ -68,27 +68,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(646, 267);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(344, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(649, 299);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(344, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(649, 348);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(344, 168);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(70, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "label3";
             // 
@@ -96,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(594, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
