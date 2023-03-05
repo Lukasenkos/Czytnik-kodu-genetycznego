@@ -22,57 +22,68 @@ namespace Czytnik_kodu_genetycznego
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
+            for (int k = 0; k < 3; k++)
+            {
+
+                Console.WriteLine(Form1.BialkaWyjsciowe1[k] + " LINIA " + k);
+            }
+
+
             Kodgenetycznywyjscie.Text = Form1.KodgenetycznyCheck;
             string[] BialkaWyjsciowe2 = new string[] { "", "", "" };
 
-            for(int i = 0; i < Form1.ListaBialek.Length; i++)
+            for (int i = 0; i < Form1.ListaBialek.Length; i++)
             {
-                if (Form1.BialkaWyjsciowe1[0] != null || Form1.BialkaWyjsciowe1[0] != "a")
+                for (int j = 0; j < Form1.BialkaWyjsciowe1.Length; j++)
                 {
-                    if (Form1.BialkaWyjsciowe1[0].ToString().Contains(Form1.ListaBialek[i]))
+                    if (Form1.BialkaWyjsciowe1[j] != null || Form1.BialkaWyjsciowe1[j] != "a")
                     {
-                        BialkaWyjsciowe2[0] += Form1.ListaBialek[i];
+                        if (Form1.BialkaWyjsciowe1[j] == Form1.ListaBialek[i])
+                        {
+                            BialkaWyjsciowe2[0] += Form1.ListaBialek[i];
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("NULL 1");
                     }
                 }
-                else
+
+                for (int j = 0; j < Form1.BialkaWyjsciowe1.Length; j++)
                 {
-                    Console.WriteLine("NULL 1");
+                    if (Form1.BialkaWyjsciowe1[j] != null || Form1.BialkaWyjsciowe1[j] != "a")
+                    {
+                        if (Form1.BialkaWyjsciowe1[j] == Form1.ListaBialek[i])
+                        {
+                            BialkaWyjsciowe2[1] += Form1.ListaBialek[i];
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("NULL 2");
+                    }
+                }
+
+
+                for (int j = 0; j < Form1.BialkaWyjsciowe1.Length; j++)
+                {
+                    if (Form1.BialkaWyjsciowe1[j] != null || Form1.BialkaWyjsciowe1[j] != "a")
+                    {
+                        if (Form1.BialkaWyjsciowe1[j] == Form1.ListaBialek[i])
+                        {
+                            BialkaWyjsciowe2[2] += Form1.ListaBialek[i];
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("NULL 3");
+                    }
                 }
             }
             SekwencjaDNA1.Text = BialkaWyjsciowe2[0].ToString();
-
-            for (int i = 0; i < Form1.ListaBialek.Length; i++)
-            {
-                if (Form1.BialkaWyjsciowe1[1] != null || Form1.BialkaWyjsciowe1[0] != "a")
-                {
-                    if (Form1.BialkaWyjsciowe1[1].ToString().Contains(Form1.ListaBialek[i]))
-                    {
-                        BialkaWyjsciowe2[1] += Form1.ListaBialek[i];
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("NULL 2");
-                }
-            }
             SekwencjaDNA2.Text = BialkaWyjsciowe2[1].ToString();
-
-
-            for (int i = 0; i < Form1.ListaBialek.Length; i++)
-            {
-                if (Form1.BialkaWyjsciowe1[2] != null || Form1.BialkaWyjsciowe1[0] != "a")
-                {
-                    if (Form1.BialkaWyjsciowe1[2].ToString().Contains(Form1.ListaBialek[i]))
-                    {
-                        BialkaWyjsciowe2[2] += Form1.ListaBialek[i];
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("NULL 3");
-                }
-            }
             SekwencjaDNA3.Text = BialkaWyjsciowe2[2].ToString();
+
 
         }
 

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Drawing;
-using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -10,12 +8,6 @@ namespace Czytnik_kodu_genetycznego
     public partial class Form1 : Form
     {
         Thread th;
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -25,6 +17,13 @@ namespace Czytnik_kodu_genetycznego
         public Form1()
         {
             InitializeComponent();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Zablokowanie zmiany wielkości okna programu
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         bool SprawdzaniePoprawnosci(char[] rnaSequence)
@@ -49,8 +48,8 @@ namespace Czytnik_kodu_genetycznego
             return true;
         }
 
-        public string[] BialkaWyjsciowe = new string[] { "" , "" , "" };
-        public static string[] BialkaWyjsciowe1 = new string[] { "" , "" , "" };
+        public string[] BialkaWyjsciowe = new string[] { "", "", "" };
+        public static string[] BialkaWyjsciowe1 = new string[] { "", "", "" };
 
         public static string[] ListaBialek = new string[] { "M", "G", "E", "D", "A", "V", "R", "S", "K", "N", "T", "I", "Q", "H", "P", "L", "W", "C", "Y", "F" };
 
@@ -612,7 +611,8 @@ namespace Czytnik_kodu_genetycznego
 
             for (int j = 0; j < 3; j++)
             {
-                for (int i = 0; i < BialkaWyjsciowe.Length; i++)
+                Console.WriteLine(BialkaWyjsciowe.Length + "DLUGOŚĆ ################################## " + j);
+                for (int i = 0; i < BialkaWyjsciowe.Length - 3; i++)
                 {
                     switch (BialkaWyjsciowe[j].ToString())
                     {
@@ -715,6 +715,7 @@ namespace Czytnik_kodu_genetycznego
 
         }
 
+
         private void Zatwierdz_Click(object sender, EventArgs e)
         {
             KodgenetycznyInput.Text = KodgenetycznyInput.Text.Replace(" ", "").ToUpper();
@@ -723,6 +724,7 @@ namespace Czytnik_kodu_genetycznego
             string KodgenetycznyCheck = KodgenetycznyInput.Text;
             if (SprawdzaniePoprawnosci(KodgenetycznyCheck.ToCharArray()))
             {
+
                 th = new Thread(opennewform);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
@@ -737,7 +739,7 @@ namespace Czytnik_kodu_genetycznego
                 KodgenetycznyInput.ForeColor = Color.Red;
 
                 Infooblendzie.Show();
-                Console.WriteLine("BŁĄD!!!");
+                Console.WriteLine("BŁĄD WPISANYCH DANYCH!!!");
             }
         }
         private void opennewform(object obj)
