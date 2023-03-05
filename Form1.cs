@@ -26,7 +26,9 @@ namespace Czytnik_kodu_genetycznego
             this.MinimizeBox = false;
 
             KodgenetycznyInput.Text = Form2.temp;
-
+            BialkaWyjsciowe1[0] = "";
+            BialkaWyjsciowe1[1] = "";
+            BialkaWyjsciowe1[2] = "";
         }
         bool SprawdzaniePoprawnosci(char[] rnaSequence)
         {
