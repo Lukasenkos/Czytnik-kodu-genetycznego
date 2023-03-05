@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace Czytnik_kodu_genetycznego
@@ -13,6 +12,104 @@ namespace Czytnik_kodu_genetycznego
             InitializeComponent();
         }
 
+        int watosciObrazkow()
+        {
+            string[] obrazki = new string[Form1.BialkaWyjsciowe0.Length];
+            int i = 0;
+            while (i < Form1.BialkaWyjsciowe0[0].Length)
+            {
+                switch (Form1.BialkaWyjsciowe0[i])
+                {
+                    case "A":
+                        obrazki[i] = "Alanine";
+                        i = i + 1;
+                        break;
+                    case "R":
+                        obrazki[i] = "Arginine";
+                        i = i + 1;
+                        break;
+                    case "N":
+                        obrazki[i] = "Asparagine";
+                        i = i + 1;
+                        break;
+                    case "D":
+                        obrazki[i] = "Aspartic Acid";
+                        i = i + 1;
+                        break;
+                    case "C":
+                        obrazki[i] = "Crysteine";
+                        i = i + 1;
+                        break;
+                    case "E":
+                        obrazki[i] = "Glutamic Acid";
+                        i = i + 1;
+                        break;
+                    case "Q":
+                        obrazki[i] = "Glutamine";
+                        i = i + 1;
+                        break;
+                    case "G":
+                        obrazki[i] = "Glycine";
+                        i = i + 1;
+                        break;
+                    case "H":
+                        obrazki[i] = "Histidnine";
+                        i = i + 1;
+                        break;
+                    case "I":
+                        obrazki[i] = "Isoleucine";
+                        i = i + 1;
+                        break;
+                    case "L":
+                        obrazki[i] = "Leucine";
+                        i = i + 1;
+                        break;
+                    case "K":
+                        obrazki[i] = "Lysine";
+                        i = i + 1;
+                        break;
+                    case "M":
+                        obrazki[i] = "Methionine";
+                        i = i + 1;
+                        break;
+                    case "F":
+                        obrazki[i] = "Phenylalanine";
+                        i = i + 1;
+                        break;
+                    case "P":
+                        obrazki[i] = "Proline";
+                        i = i + 1;
+                        break;
+                    case "U":
+                        obrazki[i] = "Selenofysteine";
+                        i = i + 1;
+                        break;
+                    case "S":
+                        obrazki[i] = "Serine";
+                        i = i + 1;
+                        break;
+                    case "T":
+                        obrazki[i] = "Theonine";
+                        i = i + 1;
+                        break;
+                    case "W":
+                        obrazki[i] = "Tryptophan";
+                        i = i + 1;
+                        break;
+                    case "Y":
+                        obrazki[i] = "Tyrosine";
+                        i = i + 1;
+                        break;
+                    case "V":
+                        obrazki[i] = "Valine";
+                        i = i + 1;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return 0;
+        }
 
         void Przewijaniezdjecia()
         {
@@ -25,26 +122,50 @@ namespace Czytnik_kodu_genetycznego
         int currentImageIndex = 0;
         string imagesFolderPath = "./Assets/Obrazki/";
 
+        int[] IlosciKodonow = new int[22];
 
-        int LiczenieKodonow(int NumerListy)
+        void LiczenieKodonow(int NumerListy)
         {
-            for (int i = 0; i < 20; i++)
+            int[] wynik = new int[20];
+
+            for(int s= 0; s<Form1.ListaBialek.Length;s++)
             {
-                if (Form1.ListaBialek[i] == Form1.BialkaWyjsciowe0[NumerListy])
+                for (int j = 0; j < Form1.BialkaWyjsciowe0[NumerListy].Length; j++)
                 {
-
-
-
-                    return 0;
+                    for (int w = 0; w < IlosciKodonow.Length; w++)
+                    {                    
+                        if (IlosciKodonow[w].Equals(Form1.ListaBialek[s]))
+                        {
+                            wynik[s] += 1;
+                        }
+                    }
                 }
-                else
-                {
-
-                }
+                Console.WriteLine("\nW tym " + wynik[s] + " elementy o wartości " + Form1.ListaBialek[s]);
             }
+            //for (int j = 0; j < Form1.BialkaWyjsciowe0[NumerListy].Length; j++)
+            //{
+            //}
 
 
-            return 0;
+
+            //for (int i = 0; i < IlosciKodonow.Length; i++)
+            //{
+            //    for (int j = 0; j < Form1.BialkaWyjsciowe0[NumerListy].Length; j++)
+            //    {
+            //        Console.WriteLine(Form1.ListaBialek[i] +" :TO A TO: "+ Form1.BialkaWyjsciowe0[j]);
+            //        IlosciKodonow[i]++;
+            //        if (Form1.ListaBialek[i] == Form1.BialkaWyjsciowe0[j])
+            //        {
+            //            IlosciKodonow[i]++;
+
+
+
+            //        }
+            //    }
+            //    //Console.WriteLine(IlosciKodonow[i]);
+            //}
+
+            //return 0;
 
         }
 
@@ -56,9 +177,20 @@ namespace Czytnik_kodu_genetycznego
             this.MinimizeBox = false;
             NatepnyButton_Click(sender, e);
 
-            label1.Text = "AAAA " + LiczenieKodonow(0);
-            label2.Text = "AAAA " + LiczenieKodonow(1);
-            label3.Text = "AAAA " + LiczenieKodonow(2);
+
+            Console.WriteLine(Form1.BialkaWyjsciowe0[0]);
+            Console.WriteLine(Form1.BialkaWyjsciowe0[1]);
+            Console.WriteLine(Form1.BialkaWyjsciowe0[2]);
+
+            LiczenieKodonow(0);
+            Console.WriteLine("========");
+            LiczenieKodonow(1);
+            Console.WriteLine("========");
+            LiczenieKodonow(2);
+
+            //label1.Text = "AAAA " + LiczenieKodonow(0);
+            //label2.Text = "AAAA " + LiczenieKodonow(1);
+            //label3.Text = "AAAA " + LiczenieKodonow(2);
             Console.WriteLine("\n" + Form1.BialkaWyjsciowe0[0]);
             Console.WriteLine(Form1.BialkaWyjsciowe0[1]);
             Console.WriteLine(Form1.BialkaWyjsciowe0[2]);

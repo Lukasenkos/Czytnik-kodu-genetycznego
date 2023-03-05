@@ -39,7 +39,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(86, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(114, 77);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 280);
             this.pictureBox1.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             // PoprzedniButton
             // 
-            this.PoprzedniButton.Location = new System.Drawing.Point(-4, 185);
+            this.PoprzedniButton.Location = new System.Drawing.Point(12, 202);
             this.PoprzedniButton.Name = "PoprzedniButton";
             this.PoprzedniButton.Size = new System.Drawing.Size(75, 23);
             this.PoprzedniButton.TabIndex = 2;

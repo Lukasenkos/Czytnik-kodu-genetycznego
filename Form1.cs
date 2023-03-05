@@ -295,6 +295,7 @@ namespace Czytnik_kodu_genetycznego
                     }
                 }
                 Console.WriteLine("=======================");
+                BialkaWyjsciowe0[ii] = BialkaWyjsciowe[ii];
             }
             Console.WriteLine(BialkaWyjsciowe[0] + " 0");
             Console.WriteLine(BialkaWyjsciowe[1] + " 1");
