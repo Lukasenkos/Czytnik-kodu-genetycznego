@@ -55,7 +55,6 @@ namespace Czytnik_kodu_genetycznego
 
         public static string[] ListaBialek = new string[] { "M", "G", "E", "D", "A", "V", "R", "S", "K", "N", "T", "I", "Q", "H", "P", "L", "W", "C", "Y", "F" };
 
-
         void RozpoznawaczBialek()
         {
             char[] KodGenetyczny = KodgenetycznyInput.Text.ToCharArray();
@@ -389,54 +388,56 @@ namespace Czytnik_kodu_genetycznego
                     }
 
                 }
-                //
-                //for (int j = 0; j < BialkaWyjsciowe.Length; j++)
-                //{
-                //    BialkaWyjsciowe[j] = BialkaWyjsciowe1[j];
-                //    for (int k = 0; k < BialkaWyjsciowe[j].Length - 1; k++)
-                //    {
-                //        string temp = "";
-                //        for (int i = k + 1; i < BialkaWyjsciowe[j].Length; i++)
-                //        {
-                //            if (k != i)
-                //            {
-                //                temp += BialkaWyjsciowe[j][i];
-                //            }
-                //            else
-                //            {
-                //                break;
-                //            }
-                //        }
-                //        BialkaWyjsciowe1[j] = temp;
-                //    }
 
-                //}
+                //    for (int j = 0; j < BialkaWyjsciowe.Length; j++)
+                //    {
+                //        BialkaWyjsciowe[j] = BialkaWyjsciowe1[j];
+                //        for (int k = 0; k < BialkaWyjsciowe[j].Length - 1; k++)
+                //        {
+                //            string temp = "";
+                //            for (int i = k + 1; i < BialkaWyjsciowe[j].Length; i++)
+                //            {
+                //                if (BialkaWyjsciowe[k] == BialkaWyjsciowe[i])
+                //                {
+                //                    k++;
+                //                }
+                //                else
+                //                {
+                //                temp += BialkaWyjsciowe[j][i];
+                //                }
+                //            }
+                //            BialkaWyjsciowe1[j] = temp;
+                //        }
+
+                //    }
+            }
+
+
+
+            Console.WriteLine("Tu jeszcze działa\n" + BialkaWyjsciowe1[0]);
+            Console.WriteLine(BialkaWyjsciowe1[1]);
+            Console.WriteLine(BialkaWyjsciowe1[2] + "\n (Tujescze dziala )END\n");
+
+            for (int j = 0; j < BialkaWyjsciowe.Length; j++)
+            {
+
+                char[] test = BialkaWyjsciowe1[j].Distinct().ToArray();
+                //Console.WriteLine(test.ToString() + " <- brak powrórzeń");
+                String Temp = "";
+                foreach (char c in test)
+                {
+                    Temp += c;
+                    Console.Write(c.ToString());
+                    Console.WriteLine();
+                    BialkaWyjsciowe1[j] = c.ToString();
+                }
+                BialkaWyjsciowe1[j] = Temp;
 
             }
 
-            Console.WriteLine("===========");
-            char[] test = BialkaWyjsciowe1[0].Distinct().ToArray();
-            Console.WriteLine(test.ToString() + " <- brak powrórzeń");
-            Console.WriteLine("===========");
-
-
-            //Console.WriteLine("\nVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
-            //Console.WriteLine(BialkaWyjsciowe[0] + " BW 0 0");
-
-            //Console.WriteLine(BialkaWyjsciowe[1] + " BW 1 0");
-
-            //Console.WriteLine(BialkaWyjsciowe[2] + " BW 2 0");
-
-            Console.WriteLine("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
-
-            Console.WriteLine(BialkaWyjsciowe1[0] + " BW1 0 0");
-
-            Console.WriteLine(BialkaWyjsciowe1[1] + " BW1 1 0");
-
-            Console.WriteLine(BialkaWyjsciowe1[2] + " BW1 2 0");
-            Console.WriteLine("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV\n");
-
-
+            Console.WriteLine("Po usunieciu powturzen\n" + BialkaWyjsciowe1[0]);
+            Console.WriteLine(BialkaWyjsciowe1[1]);
+            Console.WriteLine(BialkaWyjsciowe1[2] + "\n");
         }
 
         public static string KodgenetycznyCheck = "";
