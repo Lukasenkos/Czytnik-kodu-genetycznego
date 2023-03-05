@@ -1,19 +1,21 @@
 Program działa :)
 
 Obsługa:
-Po uruchominiu programu wyświetli się okienko główne, z trzema przyciskami i textbox'em, oraz piękną grafiką w tle ;)
+Po uruchomieniu programu wyświetli się okienko główne, z trzema przyciskami i textbox'em, oraz piękną grafiką w tle ;)
 -Textbox w nim można ręcznie wpisać kod DNA/RNA, bądź go wkleić (jak ktoś woli się pomęczyć)
 -"Wczytaj z pliku..." pozwala wybranie odpowiedniego pliku zawierającego kod (my głównie korzystaliśmy z pliku o nazwie "KodDNATestowy.txt", w folderze "Assets")[można spóbować otworzyć każdy plik, ale to się nie uda bo zawartość zostanie sprawdzona, w celu nie wywołania katastrofy ;) ]
 -"Czyszcznie", tak zgadliście czyści textbox'a ¯\_(ツ)_/¯
 -"zatwierdź" zatwiedza zawarość textbox'a i zostaje wykonany zaawansowany algorytm, po czym otwiera się okienko
 
 Drugie okienko posiada 2 przyciski, oraz 3 miejsca textowe w których są wypisane sposoby oczytu:
+-3 miejsca tekstowe o których mowa uzupełniane są tylko wtedy kiedy znajdą kodon start - kończąc na kodonie "stop" lub w przypadku gdy go nie ma - leci do końca
+-2 i 3 miejsce tekstowe - są to przesunięcie RNA 
 -Przycsk "cofnij cofa do głownego okienka"
--"Dodatkowe dane" otwiera okienko z wykresami
 -Textbox wyświetla wpisany kod
+-"Dodatkowe dane" otwiera okienko z wykresami
 
 Okienko z dodatkowymi danymi ma 2 przyciski pozwalające zmieniać obrazki (:
 
 
-Pracowaliśmy na tym miesiąc(widać na datach push'ów heh), było dużo zabawy np. rożne dziwne komentarze np. rick ashlej w kodzie przez pare tygodni itp.
-Mamy nadziję że wam się nam program spodowba.
+Pracowaliśmy na tym sporo godzin, było dużo problemów ale również zabawy np. rożne dziwne komentarze np. rick ashlej w kodzie przez pare tygodni itp.
+Mamy nadzieję że wam się nam program spodoba.
