@@ -17,8 +17,6 @@ namespace Czytnik_kodu_genetycznego
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Thread.Sleep(1000);
-
             Console.WriteLine("\n >>>>>FORM2<<<<< \n");
             //Zablokowanie zmiany wielkości okna programu
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -71,6 +69,17 @@ namespace Czytnik_kodu_genetycznego
         private void opennewform(object obj)
         {
             Application.Run(new Form1());
+        }
+
+        private void DodatkoweInfoButton_Click(object sender, EventArgs e)
+        {
+            th = new Thread(opennewform2);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void opennewform2(object obj)
+        {
+            Application.Run(new Form3());
         }
     }
 }

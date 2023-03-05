@@ -294,13 +294,11 @@ namespace Czytnik_kodu_genetycznego
                             break;
                     }
                 }
-
                 Console.WriteLine("=======================");
             }
             Console.WriteLine(BialkaWyjsciowe[0] + " 0");
             Console.WriteLine(BialkaWyjsciowe[1] + " 1");
             Console.WriteLine(BialkaWyjsciowe[2] + " 2");
-            //Zaczynanie od M , zajeło mi to 93 minuty i połowe mego zdrowia psychicznego :)
             if (BialkaWyjsciowe[0] == null)
             {
                 BialkaWyjsciowe[0] += "ERROR";
@@ -325,7 +323,7 @@ namespace Czytnik_kodu_genetycznego
             }
             Console.WriteLine("Tu jeszcze działa\n" + BialkaWyjsciowe1[0]);
             Console.WriteLine(BialkaWyjsciowe1[1]);
-            Console.WriteLine(BialkaWyjsciowe1[2] + "\n (Tujescze dziala )END\n");
+            Console.WriteLine(BialkaWyjsciowe1[2] + "\n (Tu jescze dziala )END\n");
 
             for (int j = 0; j < BialkaWyjsciowe.Length; j++)
             {
@@ -341,7 +339,7 @@ namespace Czytnik_kodu_genetycznego
                 }
                 BialkaWyjsciowe1[j] = Temp;
             }
-            Console.WriteLine("Po usunieciu powturzen\n" + BialkaWyjsciowe1[0]);
+            Console.WriteLine("Po usunieciu powtórzen\n" + BialkaWyjsciowe1[0]);
             Console.WriteLine(BialkaWyjsciowe1[1]);
             Console.WriteLine(BialkaWyjsciowe1[2] + "\n");
         }
@@ -379,7 +377,6 @@ namespace Czytnik_kodu_genetycznego
                 th.Start();
                 Infooblendzie.Hide();
                 KodgenetycznyInput.ForeColor = Color.Black;
-                Thread.Sleep(500);
                 this.Close();
             }
             else
