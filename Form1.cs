@@ -53,7 +53,7 @@ namespace Czytnik_kodu_genetycznego
         }
         public string[] BialkaWyjsciowe = new string[] { "", "", "" };
         public static string[] BialkaWyjsciowe1 = new string[] { "", "", "" };
-
+        public static string[] BialkaWyjsciowe0 = new string[] { "", "", "" };
         public static string[] ListaBialek = new string[] { "M", "G", "E", "D", "A", "V", "R", "S", "K", "N", "T", "I", "Q", "H", "P", "L", "W", "C", "Y", "F" };
 
         void RozpoznawaczBialek()
