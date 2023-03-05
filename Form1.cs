@@ -24,6 +24,9 @@ namespace Czytnik_kodu_genetycznego
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+
+            KodgenetycznyInput.Text = Form2.temp;
+
         }
         bool SprawdzaniePoprawnosci(char[] rnaSequence)
         {

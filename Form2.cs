@@ -13,6 +13,8 @@ namespace Czytnik_kodu_genetycznego
             InitializeComponent();
         }
 
+        public static string temp = "";
+
         private void Form2_Load(object sender, EventArgs e)
         {
             Thread.Sleep(1000);
@@ -23,6 +25,7 @@ namespace Czytnik_kodu_genetycznego
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
+            
             Kodgenetycznywyjscie.Text = Form1.KodgenetycznyCheck;
             string[] BialkaWyjsciowe2 = new string[] { "", "", "" };
             Console.WriteLine("Label 1: " + Form1.BialkaWyjsciowe1[0].ToString());
@@ -62,6 +65,7 @@ namespace Czytnik_kodu_genetycznego
             th = new Thread(opennewform);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
+            temp = Kodgenetycznywyjscie.Text;
             this.Close();
         }
         private void opennewform(object obj)

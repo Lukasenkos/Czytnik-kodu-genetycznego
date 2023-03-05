@@ -28,17 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.SekwencjaDNA1 = new System.Windows.Forms.Label();
             this.SekwencjaDNA2 = new System.Windows.Forms.Label();
             this.SekwencjaDNA3 = new System.Windows.Forms.Label();
-            this.SCALKAWPRAWO = new System.Windows.Forms.PictureBox();
             this.Kodgenetycznywyjscie = new System.Windows.Forms.TextBox();
             this.CofnijDoGlownegoBUTTON = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.SCALKAWPRAWO)).BeginInit();
             this.SuspendLayout();
             // 
             // SekwencjaDNA1
@@ -70,16 +67,6 @@
             this.SekwencjaDNA3.Size = new System.Drawing.Size(70, 25);
             this.SekwencjaDNA3.TabIndex = 2;
             this.SekwencjaDNA3.Text = "label3";
-            // 
-            // SCALKAWPRAWO
-            // 
-            this.SCALKAWPRAWO.Image = ((System.Drawing.Image)(resources.GetObject("SCALKAWPRAWO.Image")));
-            this.SCALKAWPRAWO.Location = new System.Drawing.Point(634, 293);
-            this.SCALKAWPRAWO.Name = "SCALKAWPRAWO";
-            this.SCALKAWPRAWO.Size = new System.Drawing.Size(104, 69);
-            this.SCALKAWPRAWO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.SCALKAWPRAWO.TabIndex = 3;
-            this.SCALKAWPRAWO.TabStop = false;
             // 
             // Kodgenetycznywyjscie
             // 
@@ -142,7 +129,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CofnijDoGlownegoBUTTON);
             this.Controls.Add(this.Kodgenetycznywyjscie);
-            this.Controls.Add(this.SCALKAWPRAWO);
             this.Controls.Add(this.SekwencjaDNA3);
             this.Controls.Add(this.SekwencjaDNA2);
             this.Controls.Add(this.SekwencjaDNA1);
@@ -150,7 +136,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SCALKAWPRAWO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +146,6 @@
         private System.Windows.Forms.Label SekwencjaDNA1;
         private System.Windows.Forms.Label SekwencjaDNA2;
         private System.Windows.Forms.Label SekwencjaDNA3;
-        private System.Windows.Forms.PictureBox SCALKAWPRAWO;
         private System.Windows.Forms.TextBox Kodgenetycznywyjscie;
         private System.Windows.Forms.Button CofnijDoGlownegoBUTTON;
         private System.Windows.Forms.Label label1;
