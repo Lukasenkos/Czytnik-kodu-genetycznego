@@ -18,8 +18,9 @@ namespace Czytnik_kodu_genetycznego
         {
             InitializeComponent();
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load_1(object sender, EventArgs e)
         {
+            Console.WriteLine("\n >>>>>FORM1<<<<< \n");
             //Zablokowanie zmiany wielkości okna programu
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -358,6 +359,8 @@ namespace Czytnik_kodu_genetycznego
                 Console.WriteLine("=======================");
             }
 
+            Console.WriteLine(BialkaWyjsciowe[0] + " BW 0 0");
+
             for (int j = 0; j < 3; j++)
             {
                 if (BialkaWyjsciowe[j] == null)
@@ -376,7 +379,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "M";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("G"))
                 {
@@ -388,7 +391,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "G";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("E"))
                 {
@@ -400,7 +403,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "E";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("D"))
                 {
@@ -412,7 +415,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "D";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("A"))
                 {
@@ -424,7 +427,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "A";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("V"))
                 {
@@ -436,7 +439,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "V";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("R"))
                 {
@@ -448,7 +451,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "R";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("S"))
                 {
@@ -460,7 +463,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "S";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("K"))
                 {
@@ -472,7 +475,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "K";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("N"))
                 {
@@ -484,7 +487,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "N";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("T"))
                 {
@@ -496,7 +499,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "T";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("I"))
                 {
@@ -508,7 +511,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "I";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("Q"))
                 {
@@ -520,7 +523,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "Q";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("H"))
                 {
@@ -532,7 +535,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "H";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("P"))
                 {
@@ -544,7 +547,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "P";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("L"))
                 {
@@ -556,7 +559,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "L";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("W"))
                 {
@@ -569,7 +572,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "W";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("C"))
                 {
@@ -581,7 +584,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "C";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("Y"))
                 {
@@ -593,7 +596,7 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "Y";
                     }
-                    break;
+
                 }
                 if (BialkaWyjsciowe[j].ToString().Contains("F"))
                 {
@@ -605,13 +608,15 @@ namespace Czytnik_kodu_genetycznego
                     {
                         BialkaWyjsciowe1[j] += "F";
                     }
-                    break;
+
                 }
             }
+            Console.WriteLine(BialkaWyjsciowe1[0] + " Po 1");
+
+            Console.WriteLine(BialkaWyjsciowe[0] + " BW 0 1");
 
             for (int j = 0; j < 3; j++)
             {
-                Console.WriteLine(BialkaWyjsciowe.Length + "DLUGOŚĆ ################################## " + j);
                 for (int i = 0; i < BialkaWyjsciowe.Length - 3; i++)
                 {
                     switch (BialkaWyjsciowe[j].ToString())
@@ -682,6 +687,8 @@ namespace Czytnik_kodu_genetycznego
                     }
                 }
             }
+            Console.WriteLine(BialkaWyjsciowe[0] + " BW 0 2");
+            Console.WriteLine(BialkaWyjsciowe1[0] + " Po 2");
         }
 
         public static string KodgenetycznyCheck = "";
@@ -732,6 +739,7 @@ namespace Czytnik_kodu_genetycznego
 
                 Infooblendzie.Hide();
                 KodgenetycznyInput.ForeColor = Color.Black;
+                Thread.Sleep(500);
                 this.Close();
             }
             else
@@ -763,5 +771,6 @@ namespace Czytnik_kodu_genetycznego
             }
             else Console.WriteLine("BŁĄD OKNA DIALOGOWEGO!");
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -17,73 +18,172 @@ namespace Czytnik_kodu_genetycznego
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            Thread.Sleep(1000);
+            
+            Console.WriteLine("\n >>>>>FORM2<<<<< \n");
             //Zablokowanie zmiany wielkości okna programu
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
-            for (int k = 0; k < 3; k++)
-            {
-
-                Console.WriteLine(Form1.BialkaWyjsciowe1[k] + " LINIA " + k);
-            }
+            //for (int k = 0; k < 3; k++)
+            //{
+            //    Console.WriteLine(Form1.BialkaWyjsciowe1[k] + " LINIA " + k);
+            //}
 
 
             Kodgenetycznywyjscie.Text = Form1.KodgenetycznyCheck;
             string[] BialkaWyjsciowe2 = new string[] { "", "", "" };
+            Console.WriteLine(Form1.BialkaWyjsciowe1[0].ToString() + " BW 0");
+            Console.WriteLine(Form1.BialkaWyjsciowe1[0].ToString()[0] + " DZIAŁA 1");
+            Console.WriteLine(Form1.BialkaWyjsciowe1[0].ToString()[1] + " DZIAŁA 2");
+            Console.WriteLine(Form1.BialkaWyjsciowe1[0].ToString()[2] + " DZIAŁA 3");
+            Console.WriteLine(Form1.BialkaWyjsciowe1[0].ToString()[3] + " DZIAŁA 4");
 
-            for (int i = 0; i < Form1.ListaBialek.Length; i++)
+            Console.WriteLine(Form1.BialkaWyjsciowe1[0].Length.ToString()[0] - '1' + " takie dziewne $DLG");
+
+            for (int i = 0; i < Form1.BialkaWyjsciowe1.Length; i++)
             {
-                for (int j = 0; j < Form1.BialkaWyjsciowe1.Length; j++)
+                int dlg0 = Form1.BialkaWyjsciowe1[0].Length.ToString()[0] - '1';
+                for (int j = 0; j < dlg0; j++)
                 {
-                    if (Form1.BialkaWyjsciowe1[j] != null || Form1.BialkaWyjsciowe1[j] != "a")
-                    {
-                        if (Form1.BialkaWyjsciowe1[j] == Form1.ListaBialek[i])
-                        {
-                            BialkaWyjsciowe2[0] += Form1.ListaBialek[i];
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("NULL 1");
-                    }
-                }
-
-                for (int j = 0; j < Form1.BialkaWyjsciowe1.Length; j++)
-                {
-                    if (Form1.BialkaWyjsciowe1[j] != null || Form1.BialkaWyjsciowe1[j] != "a")
-                    {
-                        if (Form1.BialkaWyjsciowe1[j] == Form1.ListaBialek[i])
-                        {
-                            BialkaWyjsciowe2[1] += Form1.ListaBialek[i];
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("NULL 2");
-                    }
-                }
-
-
-                for (int j = 0; j < Form1.BialkaWyjsciowe1.Length; j++)
-                {
-                    if (Form1.BialkaWyjsciowe1[j] != null || Form1.BialkaWyjsciowe1[j] != "a")
-                    {
-                        if (Form1.BialkaWyjsciowe1[j] == Form1.ListaBialek[i])
-                        {
-                            BialkaWyjsciowe2[2] += Form1.ListaBialek[i];
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("NULL 3");
-                    }
+                    Console.WriteLine(Form1.BialkaWyjsciowe1[0].ToString()[j] + " TEST !");
                 }
             }
+
+            for (int j = 0; j < Form1.BialkaWyjsciowe1.Length; j++)
+                {
+                    switch (Form1.BialkaWyjsciowe1[j].ToString())
+                    {
+                        case "M":
+                            BialkaWyjsciowe2[j] += "M";
+                            break;
+                        case "G":
+                            BialkaWyjsciowe2[j] += "G";
+                            break;
+                        case "E":
+                            BialkaWyjsciowe2[j] += "E";
+                            break;
+                        case "D":
+                            BialkaWyjsciowe2[j] += "D";
+                            break;
+                        case "A":
+                            BialkaWyjsciowe2[j] += "A";
+                            break;
+                        case "V":
+                            BialkaWyjsciowe2[j] += "V";
+                            break;
+                        case "R":
+                            BialkaWyjsciowe2[j] += "R";
+                            break;
+                        case "S":
+                            BialkaWyjsciowe2[j] += "S";
+                            break;
+                        case "K":
+                            BialkaWyjsciowe2[j] += "K";
+                            break;
+                        case "N":
+                            BialkaWyjsciowe2[j] += "N";
+                            break;
+                        case "T":
+                            BialkaWyjsciowe2[j] += "T";
+                            break;
+                        case "I":
+                            BialkaWyjsciowe2[j] += "I";
+                            break;
+                        case "Q":
+                            BialkaWyjsciowe2[j] += "Q";
+                            break;
+                        case "H":
+                            BialkaWyjsciowe2[j] += "H";
+                            break;
+                        case "P":
+                            BialkaWyjsciowe2[j] += "P";
+                            break;
+                        case "L":
+                            BialkaWyjsciowe2[j] += "L";
+                            break;
+                        case "W":
+                            BialkaWyjsciowe2[j] += "W";
+                            break;
+                        case "C":
+                            BialkaWyjsciowe2[j] += "C";
+                            break;
+                        case "Y":
+                            BialkaWyjsciowe2[j] += "T";
+                            break;
+                        case "F":
+                            BialkaWyjsciowe2[j] += "F";
+                            break;
+                        default:
+                            Console.WriteLine("DEBUG");
+                            break;
+                    }
+                }
+            //for(int i = 0; i < Form1.ListaBialek.Length; i++)
+            //{
+            //}
+
+            //for (int i = 0; i < Form1.ListaBialek.Length; i++)
+            //{
+            //    for (int j = 0; j < Form1.BialkaWyjsciowe1.Length; j++)
+            //    {
+            //        if (Form1.BialkaWyjsciowe1[j] != null || Form1.BialkaWyjsciowe1[j] != "a")
+            //        {
+            //            if (Form1.BialkaWyjsciowe1[j].Contains(Form1.ListaBialek[i]))
+            //            {
+            //                BialkaWyjsciowe2[j] += Form1.ListaBialek[i];
+            //            }
+            //            else
+            //            {
+            //                BialkaWyjsciowe2[j] += Form1.ListaBialek[i];
+            //            }
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("NULL 1");
+            //        }
+            //    }
+
+            //for (int l = 0; l < Form1.BialkaWyjsciowe1.Length; l++)
+            //{
+            //    if (Form1.BialkaWyjsciowe1[l] != null || Form1.BialkaWyjsciowe1[l] != "a")
+            //    {
+            //        if (Form1.BialkaWyjsciowe1[l].Contains(Form1.ListaBialek[i]))
+            //        {
+            //            BialkaWyjsciowe2[l] += Form1.ListaBialek[i];
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("NULL 2");
+            //    }
+            //}
+
+
+            //for (int m = 0; m < Form1.BialkaWyjsciowe1.Length; m++)
+            //{
+            //    if (Form1.BialkaWyjsciowe1[m] != null || Form1.BialkaWyjsciowe1[m] != "a")
+            //    {
+            //        if (Form1.BialkaWyjsciowe1[m].Contains(Form1.ListaBialek[i]))
+            //        {
+            //            BialkaWyjsciowe2[m] += Form1.ListaBialek[i];
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("NULL 3");
+            //    }
+            //}
+
+
+            Console.WriteLine("Label 1: "+BialkaWyjsciowe2[0].ToString());
+            Console.WriteLine("Label 2: "+BialkaWyjsciowe2[1].ToString());
+            Console.WriteLine("Label 3: "+BialkaWyjsciowe2[2].ToString());
+
             SekwencjaDNA1.Text = BialkaWyjsciowe2[0].ToString();
             SekwencjaDNA2.Text = BialkaWyjsciowe2[1].ToString();
             SekwencjaDNA3.Text = BialkaWyjsciowe2[2].ToString();
-
 
         }
 
