@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NatepnyButton = new System.Windows.Forms.Button();
             this.PoprzedniButton = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             // 
             // NatepnyButton
             // 
-            this.NatepnyButton.Location = new System.Drawing.Point(507, 202);
+            this.NatepnyButton.Location = new System.Drawing.Point(330, 196);
             this.NatepnyButton.Name = "NatepnyButton";
             this.NatepnyButton.Size = new System.Drawing.Size(75, 23);
             this.NatepnyButton.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // PoprzedniButton
             // 
-            this.PoprzedniButton.Location = new System.Drawing.Point(12, 202);
+            this.PoprzedniButton.Location = new System.Drawing.Point(12, 196);
             this.PoprzedniButton.Name = "PoprzedniButton";
             this.PoprzedniButton.Size = new System.Drawing.Size(75, 23);
             this.PoprzedniButton.TabIndex = 2;
@@ -71,9 +72,8 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(344, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
             // 
             // label2
             // 
@@ -81,9 +81,8 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(344, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
+            this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
             // 
             // label3
             // 
@@ -91,23 +90,23 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(344, 168);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 25);
+            this.label3.Size = new System.Drawing.Size(0, 25);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 450);
+            this.ClientSize = new System.Drawing.Size(417, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PoprzedniButton);
             this.Controls.Add(this.NatepnyButton);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Rozpoznawacz białek";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

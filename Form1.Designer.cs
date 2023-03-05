@@ -153,6 +153,7 @@
             this.Controls.Add(this.Zatwierdz);
             this.Controls.Add(this.KodgenetycznyInput);
             this.Controls.Add(this.clear);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rozpoznawacz białek";

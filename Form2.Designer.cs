@@ -2,7 +2,7 @@
 {
     partial class Form2
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.SekwencjaDNA1 = new System.Windows.Forms.Label();
             this.SekwencjaDNA2 = new System.Windows.Forms.Label();
             this.SekwencjaDNA3 = new System.Windows.Forms.Label();
@@ -144,9 +145,10 @@
             this.Controls.Add(this.SekwencjaDNA3);
             this.Controls.Add(this.SekwencjaDNA2);
             this.Controls.Add(this.SekwencjaDNA1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Rozpoznawacz białek";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

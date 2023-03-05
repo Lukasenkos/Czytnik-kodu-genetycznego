@@ -5,6 +5,7 @@ namespace Czytnik_kodu_genetycznego
 {
     internal static class Program
     {
+
         /// <summary>
         /// Główny punkt wejścia dla aplikacji.
         /// </summary>
